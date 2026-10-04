@@ -7,3 +7,4 @@ Open `index.html` in a browser (the breach check works best over https or `local
 
 ## Host on GitHub Pages
 Upload `index.html`, `style.css`, `script.js` and `README.md` to a repository, then go to Settings > Pages > Deploy from a branch > `main` / root.
+
