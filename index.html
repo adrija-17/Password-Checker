@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Password Checker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="card">
+  <header>
+    <div>
+      <h1>Password checker</h1>
+      <p class="sub">See how hard your password is to crack. Nothing is stored or sent, except a safe partial hash for the breach check.</p>
+    </div>
+    <button id="theme" class="ghost" type="button" aria-label="Switch to light mode">☀ Light</button>
+  </header>
+
+  <label for="pw">Enter a password</label>
+  <div class="field">
+    <input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="Type your password here">
+    <button id="show" class="ghost" type="button" aria-pressed="false">Show</button>
+  </div>
+
+  <div class="meter" aria-hidden="true"><i id="fill"></i><b id="thumb"></b></div>
+  <div class="scale"><span>Easy to crack</span><span>Possible</span><span>Impossible</span></div>
+  <div class="row"><strong id="label">Waiting for a password</strong><span id="time" class="mute"></span></div>
+  <p id="msg" class="msg" aria-live="polite">Start typing and the meter will react. Longer is stronger.</p>
+
+  <div id="breach" class="breach" aria-live="polite" hidden></div>
+  <div id="congrats" class="congrats" role="status" hidden>
+    <h2>🎉 Congratulations!</h2>
+    <p>This is a top-tier password: long, varied and not found in any known breach. Save it in a password manager and never reuse it.</p>
+  </div>
+
+  <h2>Rules for a strong password</h2>
+  <ul id="rules" class="rules"></ul>
+
+  <h2>Need help?</h2>
+  <button id="help" class="primary" type="button">Create a password for me</button>
+  <div id="ask" class="ask" hidden>
+    <p>Want me to generate a strong random password for you? It is created in your browser only.</p>
+    <button id="yes" class="primary" type="button">Yes, generate one</button>
+    <button id="no" class="ghost" type="button">No thanks</button>
+  </div>
+
+  <h2>Copy your password</h2>
+  <div class="field">
+    <input id="out" type="password" readonly placeholder="Your password appears here" aria-label="Password to copy">
+    <button id="copy" class="primary" type="button">Copy</button>
+  </div>
+  <p id="copied" class="mute small" aria-live="polite"></p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
